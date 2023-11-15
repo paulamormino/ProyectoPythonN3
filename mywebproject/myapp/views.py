@@ -1,6 +1,7 @@
+# views.py
 from django.shortcuts import render, redirect
-from .models import Producto, Cliente
-from .forms import ProductoForm, ClienteForm, BusquedaForm
+from .models import Producto
+from .forms import ProductoForm
 
 def listar_productos(request):
     productos = Producto.objects.all()
