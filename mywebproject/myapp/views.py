@@ -1,12 +1,17 @@
-# views.py
 from django.shortcuts import render, redirect
+from django.http import HttpResponseServerError
+from django.contrib.auth.decorators import login_required
 from .models import Producto
 from .forms import ProductoForm
 
 def listar_productos(request):
-    productos = Producto.objects.all()
-    return render(request, 'productos/listar_productos.html', {'productos': productos})
+    try:
+        productos = Producto.objects.all()
+        return render(request, 'productos/listar_productos.html', {'productos': productos})
+    except Exception as e:
+        return HttpResponseServerError("Error al obtener los productos: {}".format(e))
 
+@login_required(login_url='/accounts/login/')
 def crear_producto(request):
     if request.method == 'POST':
         form = ProductoForm(request.POST)
