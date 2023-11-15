@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+{% extends 'base.html' %}
+
+{% block titulo %}Título de la página de inicio{% endblock %}
+
+{% block contenido %}
+
 <html>
 <head>
     <title>Listado de Productos</title>
@@ -25,3 +31,4 @@
     <a href="{% url 'crear_producto' %}">Agregar Producto</a>
 </body>
 </html>
+{% endblock %}

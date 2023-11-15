@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block titulo %}Título por defecto{% endblock %}</title>
+    <!-- Aquí puedes añadir tus estilos CSS, scripts, etc. -->
+</head>
+<body>
+    <header>
+        <!-- Contenido del encabezado común a todas las páginas -->
+        <h1>Encabezado de la página</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Acerca de</a></li>
+                <!-- Otros elementos del menú -->
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block contenido %}
+        <!-- Este bloque será reemplazado por el contenido específico de cada página -->
+        {% endblock %}
+    </main>
+
+    <footer>
+        <!-- Contenido del pie de página común a todas las páginas -->
+        <p>Derechos de autor © 2023. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
