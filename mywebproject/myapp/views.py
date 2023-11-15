@@ -15,3 +15,6 @@ def crear_producto(request):
     else:
         form = ProductoForm()
     return render(request, 'productos/crear_producto.html', {'form': form})
+
+def inicio(request):
+    return render(request, 'inicio.html')
